@@ -1,8 +1,9 @@
 import React from "react";
 import "../../app/globals.css";
 import Link from "next/link";
+import DeleteProduct from "@/src/components/DeleteProduct";
 const getProducts = async () => {
-  let data = await fetch("http://localhost:3000/api/products");
+  let data = await fetch("http://localhost:3000/api/products",{cache:"no-cache"});
   data = await data.json();
   if (data.success) {
     return data.result;
@@ -25,6 +26,7 @@ export default async function page() {
             <th className="border border-slate-300 p-2">Company</th>
             <th className="border border-slate-300 p-2">Category</th>
             <th className="border border-slate-300 p-2">Update</th>
+            <th className="border border-slate-300 p-2">Delete</th>
           </tr>
         </thead>
         <tbody>
@@ -37,6 +39,11 @@ export default async function page() {
               <td className="border border-slate-300 p-2">{item.company}</td>
               <td className="border border-slate-300 p-2">{item.category}</td>
               <td className="border border-slate-300 p-2"><Link href={"products/"+ item._id}>Edit</Link></td>
+              <td className="border border-slate-300 p-2">
+                <DeleteProduct
+                  id={item._id}
+                />
+              </td>
             </tr>
             )
           })}
