@@ -16,7 +16,6 @@ export default function () {
       body:JSON.stringify({name,price,company,color,category})
     });
     result = await result.json();
-    
     if(result.success){
       alert("new product added")
       setName("");
@@ -24,6 +23,7 @@ export default function () {
       setCategory("");
       setColor("");
       setCompany("");
+      router.push('./products')
     }
     if(name.length == 0){
       alert("Name can not be empty!")

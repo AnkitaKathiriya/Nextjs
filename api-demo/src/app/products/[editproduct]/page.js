@@ -47,7 +47,7 @@ export default function (props) {
     <input type='text' value={company} onChange={(e)=>setCompany(e.target.value)} placeholder='Enter Product company' className="input"/>
     <input type='text' value={color} onChange={(e)=>setColor(e.target.value)} placeholder='Enter Product Color' className="input"/>
     <input type='text' value={category} onChange={(e)=>setCategory(e.target.value)} placeholder='Enter Product Category' className="input"/>
-    <button className='text-center font-bold text-white bg-gray-700 border-none rounded-xl px-4 py-2 flex m-auto' onClick={updateProduct}>Update Button</button>
+    <button className='text-center font-bold text-white bg-gray-700 border-none rounded-xl px-4 py-2 flex m-auto' onClick={updateProduct}>Update Product</button>
     <button className={"text-center font-bold text-white bg-gray-700 border-none rounded-xl px-4 py-2 flex m-auto mt-3"} type="button" onClick={() => router.back()}>
       go back
     </button>
